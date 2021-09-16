@@ -24,7 +24,8 @@
 			\includegraphics[width=0.26\textwidth]{img/htwlogo.jpg}
 	\end{figure}
 	\vspace{1cm}
-	\Huge Text Detection in Natural Scene Images
+	\Huge Text Detection in Natural Scene Images \\
+	with CRAFT and EAST
 	}
 	
 	\vspace{1cm}
@@ -38,7 +39,7 @@
 	
 	% name of the course and module
 	\date{
-	\large Module: Computergrafik und Bildverarbeitung \\
+	\large Module: \textit{Computergrafik und Bildverarbeitung} \\
 	\vspace{0.8cm}
 	\large Lecturer: Erik Rodner \\
 	\vspace{1cm}
@@ -79,16 +80,25 @@ asdasdssada
 \label{sec:overvieweast}
 According to \cite{EastZhouEtAl}, the key component of EAST is a neural network model, which is trained to directly predict the existence of text instances and their geometries from full images \citep{EastZhouEtAl}.
 Hence, the abbreviation EAST: Efficient and Accurate Scene Text Detector.
-\begin{center}
-	\includegraphics[width=0.5\textwidth]{img/eaststructure.png}	
-\end{center}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/eaststructure.png}
+	\caption{Structure of EAST, adopted from~\protect\cite{EastZhouEtAl}}
+	\label{fig:east1}
+\end{figure}
 
 
 % section overvieweast (end)
 
 \section{Overview of CRAFT} % (fold)
 \label{sec:overviewcraft}
-asdasdssada
+CRAFT stands for Character Region Awareness for Text Detection. According to \cite{CraftBaekEtAl}, CRAFT is a novel text detector which localizes the individual character regions and links the detected characters to a text instance \citep{CraftBaekEtAl}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/craftstructure.png}
+	\caption{Structure of Craft, adopted from~\protect\cite{CraftBaekEtAl}}
+	\label{fig:craft1}
+\end{figure}
 % section overviewcraft (end)
 
 \section{Methodology} % (fold)
