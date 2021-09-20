@@ -4,6 +4,7 @@
 % package for including graphics with figure-environment
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{subcaption}
 % colors for hyperlinks
 % colored borders (false) colored text (true)
 \hypersetup{colorlinks=true,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
@@ -71,14 +72,24 @@ This paper begins by observing the interference found on natural scenes followed
 It then presents an overview on the how text is detected using the two methods, along with an explanation of the evaluation dataset. Subsequently, the performance review of the algorithm will be presented, which is obtained by testing the preferred method on the aforementioned dataset.
 % section introduction (end)
 
-\section{Definition of Natural Scene Images} % (fold)
-\label{sec:definition}
-asdasdssada
-% section definition (end)
-
 \section{Challenges of Natural Text Detection} % (fold)
 \label{sec:challenges}
-Natural text detection is a greater challenge than detecting structured text in documents. \cite{NaturalScene} mentioned some conditions that are found in natural scene which may significiantly impact text detection procedure. They are:
+Natural scene images could be classified as images which are taken in uncontrolled environments, with any device ranging from smartphones to professional cameras. These images are snapshots of things in the real world.
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+	  \includegraphics[width=\linewidth]{img/sample2.jpeg}
+	  \caption{A scenery}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{img/sample3.jpeg}
+		\caption{A billboard}
+	  \end{subfigure}
+	\caption{Samples of natural scene images.}
+	\label{fig:samples}
+  \end{figure}
+
+The random nature of the real world, combined with the diversity of available devices introduced some factors which make natural text detection a greater challenge than detecting structured text in documents. \cite{NaturalScene} mentioned some conditions that are found in natural scene which may significiantly impact text detection procedure. They are:
 \begin{itemize}
 	\item Raw sensor image and sensor noise
 	\item Viewing angle
@@ -86,6 +97,7 @@ Natural text detection is a greater challenge than detecting structured text in 
 	\item Lighting
 	\item Resolution and Aliasing
 \end{itemize}
+Although devices have evolved to a point where we do not have to worry too much about sensor noise and resolution in a casual setting, the other factors remain the same. Blur, lighting, viewing angle, and other factors not mentioned in the cited paper, such as weather, are still going to provide a challenge to text detection.
 % section challenges (end)
 
 \section{Overview of EAST} % (fold)
