@@ -95,10 +95,16 @@ The random nature of the real world, combined with the diversity of available de
 	\item Viewing angle
 	\item Blur
 	\item Lighting
-	\item Resolution and Aliasing
+	\item Resolution
+	\item Non-paper objects
+	\item Non-planar objects
 \end{itemize}
-Although devices have evolved to a point where we do not have to worry too much about sensor noise and resolution in a casual setting, the other factors remain the same. Blur, lighting, viewing angle, and other factors not mentioned in the cited paper, such as weather, are still going to provide a challenge to text detection.
+Although devices have evolved to a point where most of handheld devices are capable of shooting in a high resolution, low-end handheld cameras and older models still struggle in this sector.
+Uncontrolled environment, combined with the possible lack of stabilization from the equipment can cause blur \citep{Rosebrockeast}. Also, there are countless factors such as the time of the day, weather, camera flash, and many others which may impact the lighting conditions, further hindering the ability to detect text. Non-paper objects such as glass and plastic may reflect images, and non-planar objects such as text wrapped around a bottle becomes distorted and deformed \citep{Rosebrockeast}.
+Additionally, there might be patterns that are extremely similar to text, or occlusions caused by foreign objects, which may potentially lead to confusion and mistakes \citep{LongEtAl}.
 % section challenges (end)
+
+\clearpage
 
 \section{Overview of the Methods} % (fold)
 \label{sec:overviewmethods}
@@ -106,13 +112,35 @@ Although devices have evolved to a point where we do not have to worry too much 
 \label{sub:overvieweast}
 According to \cite{EastZhouEtAl}, the key component of EAST is a neural network model, which is trained to directly predict the existence of text instances and their geometries from full images \citep{EastZhouEtAl}.
 Hence, the abbreviation EAST: Efficient and Accurate Scene Text Detector.
-\begin{figure}[h!]
+\begin{figure}[hbt!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{img/eaststructure.png}
-	\caption{Structure of EAST, adopted from~\protect\cite{EastZhouEtAl}}
+	\caption{Schematic view of EAST, adopted from Figure 3 of~\protect\cite{EastZhouEtAl}}
 	\label{fig:east1}
 \end{figure}
+
+As claimed by \cite{EastZhouEtAl}, EAST is among the most efficient text detectors that achieve state-of-the-art performance on benchmarks.
+The idea of the network is described shortly below:
+\begin{quotation}
+	\emph{``... we adopt the idea from U-shape \citep{unet}
+	to merge feature maps gradually, while keeping the upsampling branches small. Together we end up with a network that can both utilize different levels of features and
+	keep a small computation cost.''} 
+	\citep{EastZhouEtAl} 
+\end{quotation}
+It is capable of predicting text on 720p images, running at an average of 13 FPS. The fastest setting, which reached a speed of 16.8 FPS was achieved on a combination of their algorithm with PVANET on 720p images using NVIDIA Titan X graphics card. \citep{EastZhouEtAl}.
+The training of the network is further described as follow:
+\begin{quotation}
+	\emph{``The network is trained end-to-end using ADAM \citep{adam}
+	optimizer. To speed up learning, we uniformly sample
+	512x512 crops from images to form a minibatch of size
+	24. Learning rate of ADAM starts from 1e-3, decays to
+	one-tenth every 27300 minibatches, and stops at 1e-5. The
+	network is trained until performance stops improving.''} 
+	\citep{EastZhouEtAl} 
+\end{quotation}
 % subsection overvieweast (end)
+
+\clearpage
 
 \subsection{Overview of CRAFT} % (fold)
 \label{sub:overviewcraft}
