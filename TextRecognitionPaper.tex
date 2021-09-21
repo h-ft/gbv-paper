@@ -68,7 +68,7 @@ Text is arguably one of the most essential form of communication. According to \
 \end{quotation}
 In the modern world, text as a medium of communication is not only consumed by humans but has claimed its place in the world of technology.
 However, text detection in natural scene images is proven to be challenging. Compared to detecting text on handwritten materials, the randomness of a natural scene is a big hurdle to overcome.
-This paper begins by observing the interference found on natural scenes followed by introducing and giving an overview of CRAFT and EAST.
+This paper aims to test and evaluate the two proposed methods on their performance in detecting natural-scene texts. It begins by observing the interference found on natural scenes followed by introducing and giving an overview of CRAFT and EAST.
 It then presents an overview on the how text is detected using the two methods, along with an explanation of the evaluation dataset. Subsequently, the performance review of the algorithm will be presented, which is obtained by testing the preferred method on the aforementioned dataset.
 % section introduction (end)
 
@@ -100,8 +100,10 @@ The random nature of the real world, combined with the diversity of available de
 Although devices have evolved to a point where we do not have to worry too much about sensor noise and resolution in a casual setting, the other factors remain the same. Blur, lighting, viewing angle, and other factors not mentioned in the cited paper, such as weather, are still going to provide a challenge to text detection.
 % section challenges (end)
 
-\section{Overview of EAST} % (fold)
-\label{sec:overvieweast}
+\section{Overview of the Methods} % (fold)
+\label{sec:overviewmethods}
+\subsection{Overview of EAST} % (fold)
+\label{sub:overvieweast}
 According to \cite{EastZhouEtAl}, the key component of EAST is a neural network model, which is trained to directly predict the existence of text instances and their geometries from full images \citep{EastZhouEtAl}.
 Hence, the abbreviation EAST: Efficient and Accurate Scene Text Detector.
 \begin{figure}[h!]
@@ -110,12 +112,10 @@ Hence, the abbreviation EAST: Efficient and Accurate Scene Text Detector.
 	\caption{Structure of EAST, adopted from~\protect\cite{EastZhouEtAl}}
 	\label{fig:east1}
 \end{figure}
+% subsection overvieweast (end)
 
-
-% section overvieweast (end)
-
-\section{Overview of CRAFT} % (fold)
-\label{sec:overviewcraft}
+\subsection{Overview of CRAFT} % (fold)
+\label{sub:overviewcraft}
 CRAFT stands for Character Region Awareness for Text Detection. According to \cite{CraftBaekEtAl}, CRAFT is a novel text detector which localizes the individual character regions and links the detected characters to a text instance \citep{CraftBaekEtAl}.
 \begin{figure}[h!]
 	\centering
@@ -123,7 +123,8 @@ CRAFT stands for Character Region Awareness for Text Detection. According to \ci
 	\caption{Structure of Craft, adopted from~\protect\cite{CraftBaekEtAl}}
 	\label{fig:craft1}
 \end{figure}
-% section overviewcraft (end)
+% subsection overviewcraft (end)
+% section overviewmethods (end)
 
 \section{Methodology} % (fold)
 \label{sec:methodology}
@@ -200,7 +201,7 @@ Lorem ipsum dolor sit amet, consetetur \cite{NaturalScene} sadipscing elitr, sed
 
 \subsection{Another subsection within Foundations} % (fold)
 \label{sub:another_subsection_within_foundations}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing \cite{Rosebrockeast} elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 % subsection another_subsection_within_foundations (end)
 
 
