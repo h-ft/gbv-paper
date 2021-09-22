@@ -1,4 +1,6 @@
-\documentclass[a4paper]{article}
+\documentclass[10pt, a4paper]{article}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 % package for including graphics with figure-environment
@@ -151,6 +153,13 @@ CRAFT stands for Character Region Awareness for Text Detection. According to \ci
 	\caption{Structure of Craft, adopted from~\protect\cite{CraftBaekEtAl}}
 	\label{fig:craft1}
 \end{figure}
+
+As stated in the original paper, CRAFT adopts a fully convolutional network architecture based on VGG-16 \citep{vgg} with batch normalization as its backbone \citep{CraftBaekEtAl}.
+It is further described as follow:
+\begin{quotation}
+	\emph{``Our model has skip connections in the decoding part, which is similar to U-Net \citep{unet} in that it aggregates low level features. The final output has two channels as score maps: the region score and the affinity score.
+	The network architecture is schematically illustrated in figure~\ref{fig:craft1} \citep{CraftBaekEtAl}.''}
+\end{quotation}
 % subsection overviewcraft (end)
 % section overviewmethods (end)
 
@@ -181,7 +190,7 @@ In this section, an example for a literal quotation is given.
 
 Sometimes you might want to make use of the authors name within the text. Before, we used the command \texttt{citep\{\}}, which creates the brackets around author name and year. You can also use the \texttt{cite} command like this: \\
 
-\cite{Dix04} defined the concept of persona as follows: 
+\cite{CraftBaekEtAl} defined the concept of persona as follows: 
 \begin{quotation}
 	\emph{``A persona is a rich picture of an imaginary person who represents your core user group.''}
 	\citep{EastZhouEtAl}
@@ -193,16 +202,16 @@ According to APA format\footnote{ American Psychological Association (APA)} ther
 
 \begin{quotation}
 	\emph{``Include page numbers for any citations in the text of your paper that include direct quotations or refer to a specific part of the work you are referencing. Direct quotations must include a page number as part of the citation. The quoted material should be followed by a citation in parentheses that gives the author's name, the year in which the work was published, and the page number from which the quoted material appears.''}
-	\citep{Hall}
+	\citep{LongEtAl}
 \end{quotation}
 
-Check out the example and recommendations of \cite{Hall} on \url{http://www.ehow.com/how_5689799_cite-numbers-apa-format.html}. In \LaTeX you can include the pages very easy. For example: \\
+Check out the example and recommendations of \cite{LongEtAl} on \url{http://www.ehow.com/how_5689799_cite-numbers-apa-format.html}. In \LaTeX you can include the pages very easy. For example: \\
 
-\citet[p. 86]{Baddeley:1974ts} stated: 
+ stated: 
 
 \begin{quotation}
 	\emph{``We hope that our preliminary attempts to begin answering the question will convince the reader, not necessarily that our views are correct, but that the question was and is well worth asking''}
-	\citep[p. 86]{Baddeley:1974ts}
+	\citep{CraftBaekEtAl}
 \end{quotation}
 
 Note that in the first reference, we used \texttt{citet[]\{\}} in order to have brackets just around year and page number; later we used \texttt{citep[]\{\}}.
