@@ -63,12 +63,8 @@ To be edited at a later date.
 	
 \section{Introduction} % (fold)
 \label{sec:introduction}
-Text is arguably one of the most essential form of communication. According to \cite{LongEtAl}: 
-\begin{quotation}
-	\emph{``As the written form of human languages, text makes it feasible to reliably and effectively spread or acquire information across time and space. In this sense, text constitutes the cornerstone of human civilization.''} 
-	\citep{LongEtAl} 
-\end{quotation}
-In the modern world, text as a medium of communication is not only consumed by humans but has claimed its place in the world of technology.
+Text is arguably one of the most essential form of communication. Along with verbal communication, text is another reliable and effective medium to convey information in order for it to be understood. In this sense, text constitutes the cornerstone of human civilization \citep{LongEtAl}.
+In the modern world, text is not only consumed by humans but has claimed its place in the world of technology.
 However, text detection in natural scene images is proven to be challenging. Compared to detecting text on handwritten materials, the randomness of a natural scene is a big hurdle to overcome.
 This paper aims to test and evaluate the two proposed methods on their performance in detecting natural-scene texts. It begins by observing the interference found on natural scenes followed by introducing and giving an overview of CRAFT and EAST.
 It then provides an explanation of the evaluation dataset. Subsequently, the performance review of the algorithm will be presented, which is obtained by testing the preferred method on the aforementioned dataset.
@@ -122,24 +118,10 @@ Hence, the abbreviation EAST: Efficient and Accurate Scene Text Detector.
 \end{figure}
 
 As claimed by \cite{EastZhouEtAl}, EAST is among the most efficient text detectors that achieve state-of-the-art performance on benchmarks.
-The idea of the network is described shortly below:
-\begin{quotation}
-	\emph{``... we adopt the idea from U-shape \citep{unet}
-	to merge feature maps gradually, while keeping the upsampling branches small. Together we end up with a network that can both utilize different levels of features and
-	keep a small computation cost.''} 
-	\citep{EastZhouEtAl} 
-\end{quotation}
+The idea of the network is adopted from U-shape (or U-net) \citep{unet}, which simultaneously merges the feature maps and keeps the upsampling branches small. The end result is a network which is able to utilize different levels of features while keeping the computation cost low \citep{EastZhouEtAl}.
 It is capable of predicting text on 720p images, running at an average of 13 FPS. The fastest setting, which reached a speed of 16.8 FPS was achieved on a combination of their algorithm with PVANET on 720p images using NVIDIA Titan X graphics card. \citep{EastZhouEtAl}.
-The training of the network is further described as follow:
-\begin{quotation}
-	\emph{``The network is trained end-to-end using ADAM \citep{adam}
-	optimizer. To speed up learning, we uniformly sample
-	512x512 crops from images to form a minibatch of size
-	24. Learning rate of ADAM starts from 1e-3, decays to
-	one-tenth every 27300 minibatches, and stops at 1e-5. The
-	network is trained until performance stops improving.''} 
-	\citep{EastZhouEtAl} 
-\end{quotation}
+The network undergoes and end-to-end training using ADAM \citep{adam} optimizer. 512x512 crops from images are uniformly sampled to form a minibatch of size 24 to accelerate the learning process.
+Learning rate of ADAM starts from 1e-3, decays to one-tenth every 27300 minibatches, and stops at 1e-5. The network is trained until performance stops improving \citep{EastZhouEtAl}.
 % subsection overvieweast (end)
 
 \clearpage
