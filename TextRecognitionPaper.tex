@@ -189,7 +189,7 @@ The resulting images and total time will be presented in the following section.
 \clearpage
 \section{Results and Evaluation} % (fold)
 \label{sec:evaluation}
-As the name suggests, EAST is an efficient and accurate scene text detector. The aim of this section is to present the results obtained from the previous section and evaluate them based on the time needed and its detection rate. The presented results will be of the best and the worst from each dataset group.
+As the name suggests, EAST is an efficient and accurate scene text detector \citep{EastZhouEtAl}. The aim of this section is to present the results obtained from the previous section and evaluate them based on the time needed and its detection rate. The presented results will be of the best and the worst from each dataset group.
 \subsection{'Easy' Group} % (fold)
 \label{sub:easy}
 The easy group was done in approximately 2.8307597637176514 seconds. The following are the best and worst detected image respectively:
@@ -215,10 +215,36 @@ In the worst-detected image, the algorithm skipped many words. After a deeper lo
 \subsection{'Intermediate' Group} % (fold)
 \label{sub:inter}
 The intermediate group was done in approximately 2.682370662689209 seconds. The following are the best and worst detected image respectively:
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{jupyter/results/inter/sample_output_3.jpeg}
+		\caption{The best-detected image.}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{jupyter/results/inter/sample_output_2.jpeg}
+		\caption{The worst-detected image.}
+	\end{subfigure}
+	\caption{Best and worst detected images from the intermediate dataset group.}
+	\label{fig:sampleinterbestworst}
+  \end{figure}
 % subsection inter (end)
 \subsection{'Hard' Group} % (fold)
 \label{sub:hard}
-asdasd
+The hard group was done in approximately 2.573026180267334 seconds. The following are the best and worst detected image respectively:
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{jupyter/results/hard/sample_output_1.jpeg}
+		\caption{The best-detected image.}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{jupyter/results/hard/sample_output_0.jpeg}
+		\caption{The worst-detected image.}
+	\end{subfigure}
+	\caption{Best and worst detected images from the hard dataset group.}
+	\label{fig:samplehardbestworst}
+  \end{figure}
 % subsection hard (end)
 % section evaluation (end)
 
