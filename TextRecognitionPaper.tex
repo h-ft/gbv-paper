@@ -33,14 +33,9 @@
 	
 	\vspace{1cm}
 	
-	% if you are the only author, you might use the following
-	% \author{Name of student}	
-	
-	% Insert here your name and correct mail address
 	\author{\Large \href{mailto:s0566146@htw-berlin.de}{Henry Febrian}
 	\vspace{1cm}}
 	
-	% name of the course and module
 	\date{
 	\large Module: \textit{Computergrafik und Bildverarbeitung} \\
 	\vspace{0.8cm}
@@ -89,7 +84,7 @@ Natural scene images could be classified as images which are taken in uncontroll
 	\label{fig:samples}
   \end{figure}
 
-The random nature of the real world, combined with the diversity of available devices introduced some factors which make natural text detection a greater challenge than detecting structured text in documents. \cite{NaturalScene} mentioned some conditions that are found in natural scene which may significiantly impact text detection procedure. They are:
+The random nature of the real world, combined with the diversity of available devices introduced some factors which make natural text detection a greater challenge than detecting structured text in documents. \cite{NaturalScene} mentioned some conditions that are found in natural scene which may significantly impact text detection procedure. They are:
 \begin{itemize}
 	\item Raw sensor image and sensor noise
 	\item Viewing angle
@@ -178,7 +173,7 @@ Scores will be the probability of a text being present in a region and geometry 
 For each rows in the scores map, the probabilities and geometrical data containing potential bounding box coordinates will be extracted.
 For each column in the scores map, the algorithm will predict whether the score has a sufficient probability to contain a text. It will do some calculations and get the width and length of the bounding box from the geometry volume. Both the start and end coordinates will be calculated and they will be added into a list along with the probability score.
 
-Non-maxima suppresion will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ratio and drawn onto the original image.
+Non-maxima suppression will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ratio and drawn onto the original image.
 
 The network will then run through each dataset group and the total time that it needs to detect everything will be counted and save.
 The resulting images and total time will be presented in the following section.
@@ -209,7 +204,7 @@ The easy group was done in approximately 2.8307597637176514 seconds. The followi
 
 As seen above, every single text in the best image is detected, including the faint watermark at the very bottom. Considering that this is a scanned image, it is no surprise that this was a walk in a park for the algorithm. The characters are written clearly and there are no presence of any hindrance whatsoever. The only hiccup in this image is the umlaut in the 'für' which was unable to be detected.
 
-In the worst-detected image, the algorithm skipped many words. After a deeper look, it can be noticed that the words skipped are short words such as 'in', 'it', etc. The hypothesis for this is that the bounding box for these words overlap with the neighboring box, which is stronger. The cramped nature of the image does not help very much either. Therefore, the box is probably eliminated in the non-maxima suppresion stage.
+In the worst-detected image, the algorithm skipped many words. After a deeper look, it can be noticed that the words skipped are short words such as 'in', 'it', etc. The hypothesis for this is that the bounding box for these words overlap with the neighboring box, which is stronger. The cramped nature of the image does not help very much either. Therefore, the box is probably eliminated in the non-maxima suppression stage.
 % subsection easy (end)
 \subsection{'Intermediate' Group} % (fold)
 \label{sub:inter}
@@ -262,7 +257,7 @@ The harder the image, the faster the time taken to detect the words. This group 
 \clearpage
 \section{Conclusion} % (fold)
 \label{sec:conclusion}
-The EAST scene text detector was chosen for it's speed, efficiency, and accuracy. It has been proven that it was fast enough in that it went through the three groups of six images, to a total of 18, on an average time of 0.44 seconds per image. 
+The EAST scene text detector was chosen for its speed, efficiency, and accuracy. It has been proven that it was fast enough in that it went through the three groups of six images, to a total of 18, on an average time of 0.44 seconds per image. 
 
 Scanned images were a walk in the park for the detector. It detected almost every text found in the image with only minor mistakes and within a rapid timeframe.
 
