@@ -250,6 +250,14 @@ The hard group was done in approximately 2.573026180267334 seconds. The followin
 	\caption{Best and worst detected images from the hard dataset group.}
 	\label{fig:samplehardbestworst}
   \end{figure}
+
+In this group, the algorithm is tested further than before. Every image in this group has at least two or more hindering factors mentioned in section \ref{sub:testing}. 
+
+As seen above in the first image, the text is obstructed underneath a layer of plastic covering and it also has reflections of a light and a shadow. Surprisingly, the algorithm managed to detect almost every text in this image despite all the hindrance. Exception are the words which are directly under the reflection, but that is excused as it is practically unrecognizable.
+
+The second image was taken in the dark of night, with the neon sign emitting its own light, creating a glowing effect which may throw the algorithm off. As a result, only two boxes were present. The word 'SNARKY PUPPY' was positioned above an extremely bright white light, which were in stark contrast with the pitch-black background of the night sky.
+
+The harder the image, the faster the time taken to detect the words. This group was the fastest to detect. It may sound ironic, but it was because there were less detection points due to the difficulty of the image. As the algorithm skipped the region, it did not need to do anything there and went straight to the next probability-region, therefore it is faster.
 % subsection hard (end)
 % section evaluation (end)
 
