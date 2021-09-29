@@ -121,8 +121,11 @@ Hence, the abbreviation EAST: Efficient and Accurate Scene Text Detector.
 \end{figure}
 
 As claimed by \cite{EastZhouEtAl}, EAST is among the most efficient text detectors that achieve state-of-the-art performance on benchmarks.
-The idea of the network is adopted from U-shape (or U-net) \citep{unet}, which simultaneously merges the feature maps and keeps the upsampling branches small. The end result is a network which is able to utilize different levels of features while keeping the computation cost low \citep{EastZhouEtAl}.
+The idea of the network is adopted from U-shape (or U-net) \citep{unet}, which simultaneously merges the feature maps and keeps the upsampling branches small. 
+
+The end result is a network which is able to utilize different levels of features while keeping the computation cost low \citep{EastZhouEtAl}.
 It is capable of predicting text on 720p images, running at an average of 13 FPS. The fastest setting, which reached a speed of 16.8 FPS was achieved on a combination of their algorithm with PVANET on 720p images using NVIDIA Titan X graphics card. \citep{EastZhouEtAl}.
+
 The network undergoes and end-to-end training using ADAM \citep{adam} optimizer. 512x512 crops from images are uniformly sampled to form a minibatch of size 24 to accelerate the learning process.
 Learning rate of ADAM starts from 1e-3, decays to one-tenth every 27300 minibatches, and stops at 1e-5. The network is trained until performance stops improving \citep{EastZhouEtAl}.
 % subsection overvieweast (end)
@@ -134,10 +137,14 @@ Learning rate of ADAM starts from 1e-3, decays to one-tenth every 27300 minibatc
 The test will be done on three different data groups with varying degrees of difficulties. They will be divided into easy, intermediate, and hard. The aim of this test is to see how the method performs on detecting text in natural scene images, determined by the detection rate and speed.
 
 The grouping criteria of the dataset are as follow: the 'easy' group consists of images which are not natural scene. These are scanned images from item packaging and books.
+\begin{figure}[hbt!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/sampleeasy.JPG}
+	\caption{A sample image from the 'easy' group}
+	\label{fig:sampleeasy}
+\end{figure}
 
-The 'intermediate' group is classified as such because it contains natural scene images which are taken relatively close to the camera with optimal lighting conditions and one obstructing factor from those which will be mentioned shortly.
-s
-The 'hard' group consists of natural scene images with two or more of the following factors:
+The 'intermediate' group is classified as such because it contains natural scene images which are taken relatively close to the camera with optimal lighting conditions and one obstructing factor from the following:
 \begin{itemize}
 	\item Condensed, small texts
 	\item Mirroring effects
@@ -148,9 +155,29 @@ The 'hard' group consists of natural scene images with two or more of the follow
 	\item Text is obstructed behind something else
 	\item Wrapped text / distorted text
 \end{itemize}
+
+The 'hard' group consists of natural scene images with two or more of the aforementioned factors.
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{img/sample1.jpeg}
+		\caption{A sample image from the 'intermediate' group}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{img/samplehard.JPG}
+		\caption{A sample image from the 'hard' group, from \cite{mikapic}}
+	\end{subfigure}
+	\caption{Samples of image from intermediate and hard dataset group.}
+	\label{fig:samples_dataset}
+  \end{figure}
+
+Each dataset group contains approximately six images with similar criteria, which are grouped in their own folders. The network will run through each dataset group and the total time that it needs to detect everything will be presented in the following chapter.
+
+The results will be saved as a separate image which can be eyeballed 
+
 % subsection testing (end)
 % section methodology (end)
-
+\clearpage
 \section{Results and Evaluation} % (fold)
 \label{sec:evaluation}
 tba
@@ -160,7 +187,7 @@ tba
 \label{sec:conclusion}
 tba
 % section conclusion (end)
-
+\clearpage
 \newpage 
 
 \bibliographystyle{natdin}
