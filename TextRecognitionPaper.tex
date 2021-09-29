@@ -182,27 +182,39 @@ For each column in the scores map, the algorithm will predict whether the score 
 Non-maxima suppresion will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ratio and drawn onto the original image.
 
 The network will then run through each dataset group and the total time that it needs to detect everything will be counted and save.
-The resulting images and total time will be presented in the following chapter.
+The resulting images and total time will be presented in the following section.
 
 % subsection testing (end)
 % section methodology (end)
 \clearpage
 \section{Results and Evaluation} % (fold)
 \label{sec:evaluation}
-As the name suggests, EAST is an efficient and accurate scene text detector. The aim of this chapter is to present the results obtained from the previous chapter and evaluate them based on the time needed and its detection rate. The presented results will be of the best and the worst from each dataset group.
+As the name suggests, EAST is an efficient and accurate scene text detector. The aim of this section is to present the results obtained from the previous section and evaluate them based on the time needed and its detection rate. The presented results will be of the best and the worst from each dataset group.
 \subsection{'Easy' Group} % (fold)
 \label{sub:easy}
-The following is the best-detected image from the easy group:
-\begin{figure}[hbt!]
+The easy group was done in approximately 2.8307597637176514 seconds. The following are the best and worst detected image respectively:
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{jupyter/results/easy/sample_output_3.jpeg}
-	\caption{The best-detected image from the 'easy' group.}
-	\label{fig:sampleeasybest}
-\end{figure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{jupyter/results/easy/sample_output_3.jpeg}
+		\caption{The best-detected image.}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{jupyter/results/easy/sample_output_0.jpeg}
+		\caption{The worst-detected image.}
+	\end{subfigure}
+	\caption{Best and worst detected images from the easy dataset group.}
+	\label{fig:sampleeasybestworst}
+  \end{figure}
+
+
+As seen above, every single text in the best image is detected, including the faint watermark on the very bottom. Considering that this is a scanned image, it is no surprise that this was a walk in a park for the algorithm. The characters are written clearly and there are no presence of any hindrance whatsoever. The only hiccup in this image is the umlaut in the 'für' which was unable to be detected.
+
+In the worst-detected image, the algorithm skipped many words. After a deeper look, it can be noticed that the words skipped are short words such as 'in', 'it', etc. The hypothesis for this is that the bounding box for these words overlap with the neighboring box, which is stronger. The cramped nature of the image does not help very much either. Therefore, the box is probably eliminated in the non-maxima suppresion stage.
 % subsection easy (end)
 \subsection{'Intermediate' Group} % (fold)
 \label{sub:inter}
-asdasd
+The intermediate group was done in approximately 2.682370662689209 seconds. The following are the best and worst detected image respectively:
 % subsection inter (end)
 \subsection{'Hard' Group} % (fold)
 \label{sub:hard}
