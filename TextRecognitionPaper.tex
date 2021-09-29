@@ -208,7 +208,7 @@ The easy group was done in approximately 2.8307597637176514 seconds. The followi
   \end{figure}
 
 
-As seen above, every single text in the best image is detected, including the faint watermark on the very bottom. Considering that this is a scanned image, it is no surprise that this was a walk in a park for the algorithm. The characters are written clearly and there are no presence of any hindrance whatsoever. The only hiccup in this image is the umlaut in the 'für' which was unable to be detected.
+As seen above, every single text in the best image is detected, including the faint watermark at the very bottom. Considering that this is a scanned image, it is no surprise that this was a walk in a park for the algorithm. The characters are written clearly and there are no presence of any hindrance whatsoever. The only hiccup in this image is the umlaut in the 'für' which was unable to be detected.
 
 In the worst-detected image, the algorithm skipped many words. After a deeper look, it can be noticed that the words skipped are short words such as 'in', 'it', etc. The hypothesis for this is that the bounding box for these words overlap with the neighboring box, which is stronger. The cramped nature of the image does not help very much either. Therefore, the box is probably eliminated in the non-maxima suppresion stage.
 % subsection easy (end)
@@ -228,7 +228,12 @@ The intermediate group was done in approximately 2.682370662689209 seconds. The 
 	\caption{Best and worst detected images from the intermediate dataset group.}
 	\label{fig:sampleinterbestworst}
   \end{figure}
+
+In this group, the random nature of the world is introduced. However, the images are still under optimal lighting conditions and the texts are perfectly readable to the human eye.
+In the best-detected image, almost every text is detected except for two short words. Reason for this might be the same as stated in section \ref{sub:inter}, with the addition of distance. The worst-detected image is disappointing. The algorithm only managed to detect 5 points, the most noticeable being 'JERRY' and the calorie counter. The appalling results can be attributed to the way the texts wrap and distort themselves around the tub. Combined with the non-standard font that this particular brand is using, this may throw the algorithm off.
 % subsection inter (end)
+\clearpage
+
 \subsection{'Hard' Group} % (fold)
 \label{sub:hard}
 The hard group was done in approximately 2.573026180267334 seconds. The following are the best and worst detected image respectively:
