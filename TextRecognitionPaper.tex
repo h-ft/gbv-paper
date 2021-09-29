@@ -134,7 +134,7 @@ Learning rate of ADAM starts from 1e-3, decays to one-tenth every 27300 minibatc
 
 \subsection{Testing} % (fold)
 \label{sub:testing}
-The test will be done on three different data groups with varying degrees of difficulties. They will be divided into easy, intermediate, and hard. The aim of this test is to see how the method performs on detecting text in natural scene images, determined by the detection rate and speed.
+The test will be done on three different data groups with varying degrees of difficulties. They will be divided into easy, intermediate, and hard. The aim of this test is to see how the method performs on detecting text in natural scene images, determined by the detection rate and speed. It will be ran on a single NVIDIA RTX 2060 Super.
 
 The grouping criteria of the dataset are as follow: the 'easy' group consists of images which are not natural scene. These are scanned images from item packaging and books.
 \begin{figure}[hbt!]
@@ -260,10 +260,12 @@ The second image was taken in the dark of night, with the neon sign emitting its
 The harder the image, the faster the time taken to detect the words. This group was the fastest to detect. It may sound ironic, but it was because there were less detection points due to the difficulty of the image. As the algorithm skipped the region, it did not need to do anything there and went straight to the next probability-region, therefore it is faster.
 % subsection hard (end)
 % section evaluation (end)
-
+\clearpage
 \section{Conclusion} % (fold)
 \label{sec:conclusion}
-tba
+The EAST algorithm was chosen for it's speed, efficiency, and accuracy. It has been proven that it was fast enough in that it went through the three groups of six images, to a total of 18, on an average time of 0.44 seconds per image. 
+
+On natural scene images, the algorithm struggles more than on scanned images. These are due to the fact that there are many factors which may interfere with the detection process in natural scene images, such as lighting, blur, reflection, etc. However, given the right image, EAST can be very efficient and accurate in that it detects every text in the image within an exceptionally fast time.
 % section conclusion (end)
 \clearpage
 \newpage 
