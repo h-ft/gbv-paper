@@ -28,7 +28,7 @@
 	\end{figure}
 	\vspace{1cm}
 	\Huge Text Detection in Natural Scene Images \\
-	using CRAFT and EAST
+	using EAST
 	}
 	
 	\vspace{1cm}
@@ -67,8 +67,10 @@ Text is arguably one of the most essential form of communication. Along with ver
 In the modern world, text is not only consumed by humans but has claimed its place in the world of technology.
 However, text detection in natural scene images is proven to be challenging. Compared to detecting text on handwritten materials, the randomness of a natural scene is a big hurdle to overcome.
 
-This paper aims to test and evaluate the two proposed methods on their performance in detecting natural-scene texts. It begins by observing the interference found on natural scenes followed by introducing and giving an overview of CRAFT and EAST.
-It then provides an explanation of the evaluation dataset. Subsequently, the performance review of the algorithm will be presented, which is obtained by testing the preferred method on the aforementioned dataset.
+This paper aims to test and evaluate EAST on its performance in detecting natural-scene texts. 
+EAST is chosen for its speed, efficiency, and accuracy on detecting text. It is widely available in OpenCV without complicated installation and implementation procedure.
+The paper begins by observing the interference found on natural scenes followed by introducing and giving an overview of EAST.
+It then provides an explanation of the evaluation dataset. Subsequently, the performance review of the algorithm will be presented, which is obtained by testing it on the aforementioned dataset.
 % section introduction (end)
 
 \section{Challenges of Natural Text Detection} % (fold)
@@ -126,24 +128,6 @@ Learning rate of ADAM starts from 1e-3, decays to one-tenth every 27300 minibatc
 % subsection overvieweast (end)
 
 \clearpage
-
-\subsection{Overview of CRAFT} % (fold)
-\label{sub:overviewcraft}
-CRAFT stands for Character Region Awareness for Text Detection. According to \cite{CraftBaekEtAl}, CRAFT is a novel text detector which localizes the individual character regions and links the detected characters to a text instance \citep{CraftBaekEtAl}.
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{img/craftstructure.png}
-	\caption{Structure of Craft, adopted from~\protect\cite{CraftBaekEtAl}}
-	\label{fig:craft1}
-\end{figure}
-
-As stated in the original paper, CRAFT adopts a fully convolutional network architecture based on VGG-16 \citep{vgg} with batch normalization as its backbone \citep{CraftBaekEtAl}.
-It is further described as follow:
-\begin{quotation}
-	\emph{``Our model has skip connections in the decoding part, which is similar to U-Net \citep{unet} in that it aggregates low level features. The final output has two channels as score maps: the region score and the affinity score.
-	The network architecture is schematically illustrated in figure~\ref{fig:craft1} \citep{CraftBaekEtAl}.''}
-\end{quotation}
-% subsection overviewcraft (end)
 
 \subsection{Testing} % (fold)
 \label{sub:testing}
