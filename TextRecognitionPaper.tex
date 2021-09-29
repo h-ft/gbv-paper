@@ -171,16 +171,37 @@ The 'hard' group consists of natural scene images with two or more of the aforem
 	\label{fig:samples_dataset}
   \end{figure}
 
-Each dataset group contains approximately six images with similar criteria, which are grouped in their own folders. The network will run through each dataset group and the total time that it needs to detect everything will be presented in the following chapter.
+Each dataset group contains approximately six images with similar criteria, which are grouped in their own folders. The images will be resized to a multiple of 32. For the sake of consistency, every image will be resized to a square of 640 pixels regardless of their original dimensions.
 
-The results will be saved as a separate image which can be eyeballed 
+A binary large object will be created for every image and passed into the network. A forward pass will then be executed, which returns two maps: scores and geometry. 
+Scores will be the probability of a text being present in a region and geometry will be used to derive the bounding box coordinates of text in the input images \citep{Rosebrockeast}.
+
+For each rows in the scores map, the probabilities and geometrical data containing potential bounding box coordinates will be extracted.
+For each column in the scores map, the algorithm will predict whether the score has a sufficient probability to contain a text. It will do some calculations and get the width and length of the bounding box from the geometry volume. Both the start and end coordinates will be calculated and they will be added into a list along with the probability score.
+
+Non-maxima suppresion will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ration and drawn onto the original image.
+
+The network will then run through each dataset group and the total time that it needs to detect everything will be counted and save.
+The resulting images and total time will be presented in the following chapter.
 
 % subsection testing (end)
 % section methodology (end)
 \clearpage
 \section{Results and Evaluation} % (fold)
 \label{sec:evaluation}
-tba
+As the name suggests, EAST is an efficient and accurate scene text detector. The aim of this chapter is to present the results obtained from the previous chapter and evaluate them based on the time needed and its detection rate. The presented results will be of the best and the worst from each dataset group.
+\subsection{'Easy' Group} % (fold)
+\label{sub:easy}
+asdasd
+% subsection easy (end)
+\subsection{'Intermediate' Group} % (fold)
+\label{sub:inter}
+asdasd
+% subsection inter (end)
+\subsection{'Hard' Group} % (fold)
+\label{sub:hard}
+asdasd
+% subsection hard (end)
 % section evaluation (end)
 
 \section{Conclusion} % (fold)
