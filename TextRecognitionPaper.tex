@@ -179,7 +179,7 @@ Scores will be the probability of a text being present in a region and geometry 
 For each rows in the scores map, the probabilities and geometrical data containing potential bounding box coordinates will be extracted.
 For each column in the scores map, the algorithm will predict whether the score has a sufficient probability to contain a text. It will do some calculations and get the width and length of the bounding box from the geometry volume. Both the start and end coordinates will be calculated and they will be added into a list along with the probability score.
 
-Non-maxima suppresion will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ration and drawn onto the original image.
+Non-maxima suppresion will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ratio and drawn onto the original image.
 
 The network will then run through each dataset group and the total time that it needs to detect everything will be counted and save.
 The resulting images and total time will be presented in the following chapter.
