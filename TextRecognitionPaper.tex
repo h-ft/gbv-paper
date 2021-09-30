@@ -191,7 +191,7 @@ The resulting images and total time will be presented in Section \ref{sec:evalua
 As the name suggests, EAST is an efficient and accurate scene text detector \citep{EastZhouEtAl}. The aim of this section is to present the results obtained from the previous section and evaluate them based on the time needed and its detection rate. The presented results will be of the best and the worst from each dataset group.
 \subsection{'Easy' Group} % (fold)
 \label{sub:easy}
-The easy group was done in approximately 2.83 seconds. The following are the best and worst detected image respectively:
+The easy group was done in approximately 2.83 seconds. In the detection process, every image is resized to a square of 640 pixels. In the final step, the boxes are drawn on top of the original image. The following are the best and worst detected image respectively:
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{0.4\linewidth}
@@ -213,7 +213,7 @@ In the worst-detected image, the algorithm skipped many words. After a deeper lo
 % subsection easy (end)
 \subsection{'Intermediate' Group} % (fold)
 \label{sub:inter}
-The intermediate group was done in approximately 2.68 seconds. The following are the best and worst detected image respectively:
+The intermediate group was done in approximately 2.68 seconds. In the detection process, every image is resized to a square of 640 pixels. In the final step, the boxes are drawn on top of the original image. The following are the best and worst detected image respectively:
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{0.4\linewidth}
@@ -235,7 +235,7 @@ In the best-detected image, almost every text is detected except for two short w
 
 \subsection{'Hard' Group} % (fold)
 \label{sub:hard}
-The hard group was done in approximately 2.57 seconds. The following are the best and worst detected image respectively:
+The hard group was done in approximately 2.57 seconds. In the detection process, every image is resized to a square of 640 pixels. In the final step, the boxes are drawn on top of the original image. The following are the best and worst detected image respectively:
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{0.4\linewidth}
