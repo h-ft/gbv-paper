@@ -176,7 +176,7 @@ As can be seen on Figure \ref{fig:east1} in Section \ref{sub:overvieweast}, a bi
 Scores will be the probability of a text being present in a region and geometry will be used to derive the bounding box coordinates of text in the input images \citep{Rosebrockeast}.
 
 For each rows in the scores map, the probabilities and geometrical data containing potential bounding box coordinates will be extracted.
-For each column in the scores map, the algorithm will predict whether the score has a sufficient probability to contain a text. It will do some calculations and get the width and length of the bounding box from the geometry volume. Both the start and end coordinates will be calculated and they will be added into a list along with the probability score.
+For each column in the scores map, the algorithm will predict whether the score has a sufficient probability to contain a text. It will do some calculations for the text angle and get the width and length of the bounding box from the geometry volume. These belong to the RBOX geometry group as illustrated in Figure \ref{fig:east1}. Both the start and end coordinates will be calculated and they will be added into a list along with the probability score.
 
 Non-maxima suppression will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ratio and drawn onto the original image.
 
