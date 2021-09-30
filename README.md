@@ -1,3 +1,6 @@
 # gbv-paper
 Repository containing code and paper for the module Graphics and Image Processing by Prof. Erik Rodner
-test
+
+Code: The code is located inside the folder 'jupyter'. The environment 'bvlecture' is sufficient to run this code, with an addition of imutils which needs to be installed separately.
+
+Paper: The paper is written using Latex. Both the .tex and .pdf files are to be found in the repository.
