@@ -110,7 +110,7 @@ Additionally, there might be patterns that are extremely similar to text, or occ
 \label{sec:methodology}
 \subsection{Overview of EAST} % (fold)
 \label{sub:overvieweast}
-According to \cite{EastZhouEtAl}, the key component of EAST is a neural network model, which is trained to directly predict the existence of text instances and their geometries from full images \citep{EastZhouEtAl}.
+According to \cite{EastZhouEtAl}, the key component of EAST is a convolutional neural network model, which is trained to directly predict the existence of text instances and their geometries from full images \citep{EastZhouEtAl}.
 Hence, the abbreviation EAST: Efficient and Accurate Scene Text Detector.
 \begin{figure}[hbt!]
 	\centering
@@ -191,7 +191,7 @@ The resulting images and total time will be presented in the following section.
 As the name suggests, EAST is an efficient and accurate scene text detector \citep{EastZhouEtAl}. The aim of this section is to present the results obtained from the previous section and evaluate them based on the time needed and its detection rate. The presented results will be of the best and the worst from each dataset group.
 \subsection{'Easy' Group} % (fold)
 \label{sub:easy}
-The easy group was done in approximately 2.8307597637176514 seconds. The following are the best and worst detected image respectively:
+The easy group was done in approximately 2.83 seconds. The following are the best and worst detected image respectively:
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{0.4\linewidth}
@@ -213,7 +213,7 @@ In the worst-detected image, the algorithm skipped many words. After a deeper lo
 % subsection easy (end)
 \subsection{'Intermediate' Group} % (fold)
 \label{sub:inter}
-The intermediate group was done in approximately 2.682370662689209 seconds. The following are the best and worst detected image respectively:
+The intermediate group was done in approximately 2.68 seconds. The following are the best and worst detected image respectively:
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{0.4\linewidth}
@@ -235,7 +235,7 @@ In the best-detected image, almost every text is detected except for two short w
 
 \subsection{'Hard' Group} % (fold)
 \label{sub:hard}
-The hard group was done in approximately 2.573026180267334 seconds. The following are the best and worst detected image respectively:
+The hard group was done in approximately 2.57 seconds. The following are the best and worst detected image respectively:
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}[b]{0.4\linewidth}
