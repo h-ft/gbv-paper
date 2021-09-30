@@ -172,7 +172,7 @@ The 'hard' group consists of natural scene images with two or more of the aforem
 
 Each dataset group contains approximately six images with similar criteria, which are grouped in their own folders. The images will be resized to a multiple of 32. For the sake of consistency, every image will be resized to a square of 640 pixels regardless of their original dimensions.
 
-A binary large object will be created for every image and passed into the network. A forward pass will then be executed, which returns two maps: scores and geometry. 
+As can be seen on Figure \ref{fig:east1} in Section \ref{sub:overvieweast}, a binary large object will be created for every image and passed into the network. A forward pass will then be executed, which returns two maps: scores and geometry. 
 Scores will be the probability of a text being present in a region and geometry will be used to derive the bounding box coordinates of text in the input images \citep{Rosebrockeast}.
 
 For each rows in the scores map, the probabilities and geometrical data containing potential bounding box coordinates will be extracted.
@@ -181,7 +181,7 @@ For each column in the scores map, the algorithm will predict whether the score 
 Non-maxima suppression will be used to overwrite weak bounding boxes. The remaining boxes will be scaled using the image ratio and drawn onto the original image.
 
 The network will then run through each dataset group and the total time that it needs to detect everything will be counted and save.
-The resulting images and total time will be presented in the following section.
+The resulting images and total time will be presented in Section \ref{sec:evaluation}.
 
 % subsection testing (end)
 % section methodology (end)
@@ -267,6 +267,8 @@ The EAST scene text detector was chosen for its speed, efficiency, and accuracy.
 Scanned images were a walk in the park for the detector. It detected almost every text found in the image with only minor mistakes and within a rapid timeframe.
 
 On natural scene images, the algorithm struggles more than on scanned images. These are due to the fact that there are many factors which may interfere with the detection process in natural scene images, such as lighting, blur, reflection, etc. However, given the right image, EAST can be very efficient and accurate in that it detects every text in the image within an exceptionally fast time.
+
+Besides EAST, there are other methods for text detection which are worth looking at. Some of those are CRAFT: Character Region Awareness for Text Detection \citep{CraftBaekEtAl}, Google Tesseract \citep{tesseract}, and many more. 
 % section conclusion (end)
 \clearpage
 \newpage 
